@@ -144,6 +144,10 @@ print(((covid_19[(covid_19['Recuperado']=='Activo') ].shape[0])/(covid_19['Recup
 
 print(covid_19['Ubicación del caso'].value_counts().plot.bar())
 
+#33.  Haga un gráfico de barras por Sexo de toda Colombia
+
+print(covid_19['Sexo'].value_counts().plot.bar())
+
 
 
 
