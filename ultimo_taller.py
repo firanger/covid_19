@@ -112,3 +112,7 @@ print("tasa de recuperados",((covid_19.groupby(['Nombre departamento','Recuperad
 print("tasa de fallecidos",((covid_19.groupby(['Nombre municipio','Estado']).size() / (covid_19.groupby(['Nombre municipio','Estado']).size()).sum()) * 100)[['Nombre municipio','Fallecido']])
 
 print("tasa de recuperados",((covid_19.groupby(['Nombre municipio','Recuperado']).size() / (covid_19.groupby(['Nombre municipio','Estado']).size()).sum()) * 100)[['Nombre municipio','Recuperado']])
+
+#25.  Liste por cada ciudad la cantidad de personas por atención
+
+covid_19[(covid_19['Ubicación del caso'] != 'Fallecido')].groupby(['Nombre municipio']).size() 
