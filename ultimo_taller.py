@@ -3,12 +3,19 @@ import numpy as np
 import matplotlib.pyplot as plt
 url='D:\covid_22_noviembre.csv'
 
-data= pd.read_csv(url)
+covid_19= pd.read_csv(url)
 
-
-print(data.info())
+covid_19.Sexo.replace('f','F',inplace=True)
+covid_19.Sexo.replace('m','M',inplace=True)
+covid_19.Estado.replace('leve','Leve', inplace=True)
+covid_19.Estado.replace('LEVE','Leve', inplace=True)
+print(covid_19.info())
 
 #1.  Número de casos de Contagiados en el País.  Número de casos de Contagiados en el País.
 
-print(data[data['Sexo']=='Activo'].shape[0])
+print(covid_19[covid_19['Recuperado']=='Activo'].shape[0])
+
+#2.  Número de Municipios Afectados
+
+print(covid_19[(covid_19.Recuperado != '')].groupby(['Nombre municipio']).size().shape[0])
 
