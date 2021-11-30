@@ -35,4 +35,8 @@ print(covid_19[covid_19['Recuperado']=='Recuperado'].shape[0])
 
 print(covid_19[covid_19['Recuperado']=='Fallecido'].shape[0])
 
+#7.  Ordenar de Mayor a menor por tipo de caso (Importado,  en estudio, Relacionado)
+
+print(covid_19.groupby('Tipo de contagio').size().sort_values(ascending=False) )
+
 
