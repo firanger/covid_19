@@ -127,3 +127,8 @@ covid_19['Recuperado'].value_counts().plot.bar()
 
 #28.  Grafique las curvas de contagio, muerte y recuperación de los 10 departamentos con mas casos de contagiados acumulados
 covid_19['Nombre departamento'].value_counts().plot.bar()
+
+#29. Grafique las curvas de contagio, muerte y recuperación de las 10 ciudades con mas casos de contagiados acumulados
+covid_19['Nombre municipio'].value_counts().plot.bar()
+
+#
