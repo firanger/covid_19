@@ -95,5 +95,10 @@ print(covid_19[covid_19['Recuperado'] == 'Activo'].groupby(['Nombre del país'])
 
 print(covid_19['Fecha de inicio de síntomas'].value_counts())
 
-#
+#22.  Diga cual es la tasa de mortalidad y recuperación que tiene toda 
+
+print("tasa de fallecidos",((covid_19.groupby('Estado').size() / (covid_19.groupby('Estado').size()).sum()) * 100)['Fallecido'])
+
+print("tasa de recuperados",((covid_19.groupby('Recuperado').size() / (covid_19.groupby('Estado').size()).sum()) * 100)['Recuperado'])
+
 
