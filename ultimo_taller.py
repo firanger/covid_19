@@ -8,4 +8,7 @@ data= pd.read_csv(url)
 
 print(data.info())
 
+#1.  Número de casos de Contagiados en el País.  Número de casos de Contagiados en el País.
+
+print(data[data['Sexo']=='Activo'].shape[0])
 
