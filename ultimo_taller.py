@@ -72,4 +72,6 @@ print(covid_19[(covid_19['Recuperado'] == 'Activo')]['Nombre municipio'].value_c
 
 print(covid_19[covid_19['Recuperado'] == 'Fallecido']['Nombre municipio'].value_counts().head(10))
 
-#
+#16.  Liste de mayor a menor los 10 municipios con mas casos de recuperados
+
+print(covid_19[covid_19['Recuperado'] == 'Recuperado']['Nombre departamento'].value_counts().head(10))
