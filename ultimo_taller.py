@@ -91,5 +91,9 @@ print(covid_19.groupby(['Nombre departamento', 'Nombre municipio', 'Sexo'])['Eda
 #20.  Liste de mayor a menor el número de contagiados por país de procedencia 
 print(covid_19[covid_19['Recuperado'] == 'Activo'].groupby(['Nombre del país']).size())
 
+#21.  Liste de mayor a menor las fechas donde se presentaron mas contagios 
 
+print(covid_19['Fecha de inicio de síntomas'].value_counts())
+
+#
 
