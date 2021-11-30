@@ -79,3 +79,8 @@ print(covid_19[covid_19['Recuperado'] == 'Recuperado']['Nombre departamento'].va
 #17.  Liste agrupado por departamento y en orden de Mayor a menor las ciudades con mas casos de contagiados
 
 print(covid_19[covid_19.Recuperado == 'Activo'].groupby(['Nombre departamento','Nombre municipio']).size().sort_values(ascending=False))
+
+#18.  Número de Mujeres y hombres contagiados por ciudad por departamento
+
+print(covid_19[covid_19['Recuperado'] == 'Activo'].groupby(['Nombre departamento','Nombre municipio','Sexo']).size())
+
