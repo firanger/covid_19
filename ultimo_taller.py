@@ -116,3 +116,8 @@ print("tasa de recuperados",((covid_19.groupby(['Nombre municipio','Recuperado']
 #25.  Liste por cada ciudad la cantidad de personas por atención
 
 covid_19[(covid_19['Ubicación del caso'] != 'Fallecido')].groupby(['Nombre municipio']).size() 
+
+#26.  Liste el promedio de edad por sexo por cada ciudad de contagiados
+
+print( covid_19.groupby(['Nombre municipio', 'Sexo'])['Edad'].mean())
+
