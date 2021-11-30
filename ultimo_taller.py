@@ -88,6 +88,8 @@ print(covid_19[covid_19['Recuperado'] == 'Activo'].groupby(['Nombre departamento
 #19.  Liste el promedio de edad de contagiados por hombre y mujeres por ciudad por departamento 
 print(covid_19.groupby(['Nombre departamento', 'Nombre municipio', 'Sexo'])['Edad'].mean())
 
+#20.  Liste de mayor a menor el número de contagiados por país de procedencia 
+print(covid_19[covid_19['Recuperado'] == 'Activo'].groupby(['Nombre del país']).size())
 
 
 
