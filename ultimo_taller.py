@@ -41,3 +41,7 @@ print(covid_19.groupby('Tipo de contagio').size().sort_values(ascending=False) )
 #8.  Número de departamentos afectados 
 
 print(covid_19[(covid_19.Recuperado != '')].groupby(['Nombre departamento']).size().shape[0])
+
+#9.  Liste los departamentos afectados(sin repetirlos)
+
+print(covid_19[(covid_19.Recuperado != '')].groupby(['Nombre departamento']).size())
