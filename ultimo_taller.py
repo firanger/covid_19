@@ -9,6 +9,8 @@ covid_19.Sexo.replace('f','F',inplace=True)
 covid_19.Sexo.replace('m','M',inplace=True)
 covid_19.Estado.replace('leve','Leve', inplace=True)
 covid_19.Estado.replace('LEVE','Leve', inplace=True)
+covid_19['Nombre departamento'].replace('CASA','Casa', inplace=True)
+covid_19['Nombre departamento'].replace('casa','Casa', inplace=True)
 print(covid_19.info())
 
 #1.  Número de casos de Contagiados en el País.  Número de casos de Contagiados en el País.
@@ -45,3 +47,8 @@ print(covid_19[(covid_19.Recuperado != '')].groupby(['Nombre departamento']).siz
 #9.  Liste los departamentos afectados(sin repetirlos)
 
 print(covid_19[(covid_19.Recuperado != '')].groupby(['Nombre departamento']).size())
+
+#10. Ordene de mayor a menor por tipo de atención
+
+print(covid_19.groupby('Ubicacion del caso').size().sort_values(ascending=False))
+
