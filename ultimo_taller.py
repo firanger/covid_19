@@ -101,4 +101,8 @@ print("tasa de fallecidos",((covid_19.groupby('Estado').size() / (covid_19.group
 
 print("tasa de recuperados",((covid_19.groupby('Recuperado').size() / (covid_19.groupby('Estado').size()).sum()) * 100)['Recuperado'])
 
+# 23 Liste la tasa de mortalidad y recuperación que tiene cada departamento
 
+print("tasa de fallecidos",((covid_19.groupby(['Nombre departamento','Estado']).size() / (covid_19.groupby(['Nombre departamento','Estado']).size()).sum()) * 100)[['Nombre departamento','Fallecido']])
+
+print("tasa de recuperados",((covid_19.groupby(['Nombre departamento','Recuperado']).size() / (covid_19.groupby(['Nombre departamento','Estado']).size()).sum()) * 100)[['Nombre departamento','Recuperado']])
