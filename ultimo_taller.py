@@ -116,23 +116,31 @@ print("tasa de recuperados",((covid_19.groupby('Recuperado').size() / (covid_19.
 
 #25.  Liste por cada ciudad la cantidad de personas por atención
 
-covid_19[(covid_19['Ubicación del caso'] != 'Fallecido')].groupby(['Nombre municipio']).size() 
+print(covid_19[(covid_19['Ubicación del caso'] != 'Fallecido')].groupby(['Nombre municipio']).size() )
 
 #26.  Liste el promedio de edad por sexo por cada ciudad de contagiados
 
 print( covid_19.groupby(['Nombre municipio', 'Sexo'])['Edad'].mean())
 
 #27.  Grafique las curvas de contagio, muerte y recuperación de toda Colombia acumulados
-covid_19['Recuperado'].value_counts().plot.bar()
+print(covid_19['Recuperado'].value_counts().plot.bar())
 
 #28.  Grafique las curvas de contagio, muerte y recuperación de los 10 departamentos con mas casos de contagiados acumulados
-covid_19['Nombre departamento'].value_counts().plot.bar()
+print(covid_19['Nombre departamento'].value_counts().plot.bar())
 
 #29. Grafique las curvas de contagio, muerte y recuperación de las 10 ciudades con mas casos de contagiados acumulados
-covid_19['Nombre municipio'].value_counts().plot.bar()
+print(covid_19['Nombre municipio'].value_counts().plot.bar())
 
 #30.  Liste de mayor a menor la cantidad de fallecidos por edad en toda Colombia.
 
-covid_19['Edad'].value_counts()
+print(covid_19[covid_19['Recuperado'] == 'Fallecido']['Edad'].value_counts())
+
+#31.  Liste el porcentaje de personas por atención de toda Colombia
+
+#print(covid_19[(covid_19['Ubicación del caso'] != 'Fallecido')].mean() )
+
+#
+
+
 
 
