@@ -52,3 +52,6 @@ print(covid_19[(covid_19.Recuperado != '')].groupby(['Nombre departamento']).siz
 
 print(covid_19.groupby('Ubicacion del caso').size().sort_values(ascending=False))
 
+#11.  Liste de mayor a menor los 10 departamentos con mas casos de contagiados 
+
+covid_19['Nombre departamento'].value_counts().head(10)
