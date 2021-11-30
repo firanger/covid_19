@@ -1,7 +1,7 @@
 import pandas as pd 
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.pyplot as bar
+
 url='D:\covid_22_noviembre.csv'
 
 covid_19= pd.read_csv(url)
@@ -131,4 +131,8 @@ covid_19['Nombre departamento'].value_counts().plot.bar()
 #29. Grafique las curvas de contagio, muerte y recuperación de las 10 ciudades con mas casos de contagiados acumulados
 covid_19['Nombre municipio'].value_counts().plot.bar()
 
-#
+#30.  Liste de mayor a menor la cantidad de fallecidos por edad en toda Colombia.
+
+covid_19['Edad'].value_counts()
+
+
