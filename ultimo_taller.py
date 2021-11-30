@@ -12,6 +12,7 @@ covid_19.Estado.replace('leve','Leve', inplace=True)
 covid_19.Estado.replace('LEVE','Leve', inplace=True)
 covid_19['Nombre departamento'].replace('CASA','Casa', inplace=True)
 covid_19['Nombre departamento'].replace('casa','Casa', inplace=True)
+covid_19['Recuperado'].replace('fallecido','Fallecido', inplace=True)
 covid_19['Nombre del país'].replace('VENEUELA','VENEZUELA', inplace=True)
 print(covid_19.info())
 
@@ -116,7 +117,7 @@ print("tasa de recuperados",((covid_19.groupby('Recuperado').size() / (covid_19.
 
 #25.  Liste por cada ciudad la cantidad de personas por atención
 
-print(covid_19[(covid_19['Ubicación del caso'] != 'Fallecido')].groupby(['Nombre municipio']).size() )
+print(covid_19[(covid_19['Recuperado'] != 'Fallecido')& covid_19['Recuperado']!='Recuperado'].groupby(['Nombre municipio']).size() )
 
 #26.  Liste el promedio de edad por sexo por cada ciudad de contagiados
 
@@ -137,9 +138,11 @@ print(covid_19[covid_19['Recuperado'] == 'Fallecido']['Edad'].value_counts())
 
 #31.  Liste el porcentaje de personas por atención de toda Colombia
 
-#print(covid_19[(covid_19['Ubicación del caso'] != 'Fallecido')].mean() )
+print(((covid_19[(covid_19['Recuperado']=='Activo') ].shape[0])/(covid_19['Recuperado'].shape[0]))*100 )
 
-#
+#32.  Haga un gráfico de barras por atención de toda Colombia
+
+print(covid_19['Ubicación del caso'].value_counts().plot.bar())
 
 
 
