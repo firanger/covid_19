@@ -19,3 +19,7 @@ print(covid_19[covid_19['Recuperado']=='Activo'].shape[0])
 
 print(covid_19[(covid_19.Recuperado != '')].groupby(['Nombre municipio']).size().shape[0])
 
+#3.  Liste los municipios afectados (sin repetirlos)
+
+print(covid_19[(covid_19.Recuperado != '')].groupby(['Nombre municipio']).size())
+
