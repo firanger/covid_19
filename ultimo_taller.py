@@ -106,3 +106,9 @@ print("tasa de recuperados",((covid_19.groupby('Recuperado').size() / (covid_19.
 print("tasa de fallecidos",((covid_19.groupby(['Nombre departamento','Estado']).size() / (covid_19.groupby(['Nombre departamento','Estado']).size()).sum()) * 100)[['Nombre departamento','Fallecido']])
 
 print("tasa de recuperados",((covid_19.groupby(['Nombre departamento','Recuperado']).size() / (covid_19.groupby(['Nombre departamento','Estado']).size()).sum()) * 100)[['Nombre departamento','Recuperado']])
+
+# 24. Liste la tasa de mortalidad y recuperación que tiene cada ciudad
+
+print("tasa de fallecidos",((covid_19.groupby(['Nombre municipio','Estado']).size() / (covid_19.groupby(['Nombre municipio','Estado']).size()).sum()) * 100)[['Nombre municipio','Fallecido']])
+
+print("tasa de recuperados",((covid_19.groupby(['Nombre municipio','Recuperado']).size() / (covid_19.groupby(['Nombre municipio','Estado']).size()).sum()) * 100)[['Nombre municipio','Recuperado']])
