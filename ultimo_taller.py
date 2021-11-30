@@ -11,6 +11,7 @@ covid_19.Estado.replace('leve','Leve', inplace=True)
 covid_19.Estado.replace('LEVE','Leve', inplace=True)
 covid_19['Nombre departamento'].replace('CASA','Casa', inplace=True)
 covid_19['Nombre departamento'].replace('casa','Casa', inplace=True)
+covid_19['Nombre del país'].replace('VENEUELA','VENEZUELA', inplace=True)
 print(covid_19.info())
 
 #1.  Número de casos de Contagiados en el País.  Número de casos de Contagiados en el País.
@@ -83,4 +84,10 @@ print(covid_19[covid_19.Recuperado == 'Activo'].groupby(['Nombre departamento','
 #18.  Número de Mujeres y hombres contagiados por ciudad por departamento
 
 print(covid_19[covid_19['Recuperado'] == 'Activo'].groupby(['Nombre departamento','Nombre municipio','Sexo']).size())
+
+#19.  Liste el promedio de edad de contagiados por hombre y mujeres por ciudad por departamento 
+print(covid_19.groupby(['Nombre departamento', 'Nombre municipio', 'Sexo'])['Edad'].mean())
+
+
+
 
