@@ -148,6 +148,11 @@ print(covid_19['Ubicación del caso'].value_counts().plot.bar())
 
 print(covid_19['Sexo'].value_counts().plot.bar())
 
+#34.  Haga un gráfico de barras por tipo de toda Colombia
+
+print(covid_19['Tipo de contagio'].value_counts().plot.bar())
+
+
 
 
 
