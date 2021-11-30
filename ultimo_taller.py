@@ -125,5 +125,5 @@ print( covid_19.groupby(['Nombre municipio', 'Sexo'])['Edad'].mean())
 #27.  Grafique las curvas de contagio, muerte y recuperación de toda Colombia acumulados
 covid_19['Recuperado'].value_counts().plot.bar()
 
-#
-
+#28.  Grafique las curvas de contagio, muerte y recuperación de los 10 departamentos con mas casos de contagiados acumulados
+covid_19['Nombre departamento'].value_counts().plot.bar()
