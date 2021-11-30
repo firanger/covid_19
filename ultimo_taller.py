@@ -50,7 +50,7 @@ print(covid_19[(covid_19.Recuperado != '')].groupby(['Nombre departamento']).siz
 
 #10. Ordene de mayor a menor por tipo de atención
 
-print(covid_19.groupby('Ubicacion del caso').size().sort_values(ascending=False))
+print(covid_19.groupby('Ubicación del caso').size().sort_values(ascending=False))
 
 #11.  Liste de mayor a menor los 10 departamentos con mas casos de contagiados 
 
@@ -75,3 +75,7 @@ print(covid_19[covid_19['Recuperado'] == 'Fallecido']['Nombre municipio'].value_
 #16.  Liste de mayor a menor los 10 municipios con mas casos de recuperados
 
 print(covid_19[covid_19['Recuperado'] == 'Recuperado']['Nombre departamento'].value_counts().head(10))
+
+#17.  Liste agrupado por departamento y en orden de Mayor a menor las ciudades con mas casos de contagiados
+
+print(covid_19[covid_19.Recuperado == 'Activo'].groupby(['Nombre departamento','Nombre municipio']).size().sort_values(ascending=False))
