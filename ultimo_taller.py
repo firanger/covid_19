@@ -1,6 +1,7 @@
 import pandas as pd 
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.pyplot as bar
 url='D:\covid_22_noviembre.csv'
 
 covid_19= pd.read_csv(url)
@@ -103,15 +104,15 @@ print("tasa de recuperados",((covid_19.groupby('Recuperado').size() / (covid_19.
 
 # 23 Liste la tasa de mortalidad y recuperación que tiene cada departamento
 
-print("tasa de fallecidos",((covid_19.groupby(['Nombre departamento','Estado']).size() / (covid_19.groupby(['Nombre departamento','Estado']).size()).sum()) * 100)[['Nombre departamento','Fallecido']])
+#print("tasa de fallecidos",((covid_19.groupby(['Nombre departamento','Estado']).size() / (covid_19.groupby(['Nombre departamento','Estado']).size()).sum()) * 100)[['Nombre departamento','Fallecido']])
 
-print("tasa de recuperados",((covid_19.groupby(['Nombre departamento','Recuperado']).size() / (covid_19.groupby(['Nombre departamento','Estado']).size()).sum()) * 100)[['Nombre departamento','Recuperado']])
+#print("tasa de recuperados",((covid_19.groupby(['Nombre departamento','Recuperado']).size() / (covid_19.groupby(['Nombre departamento','Estado']).size()).sum()) * 100)[['Nombre departamento','Recuperado']])
 
 # 24. Liste la tasa de mortalidad y recuperación que tiene cada ciudad
 
-print("tasa de fallecidos",((covid_19.groupby(['Nombre municipio','Estado']).size() / (covid_19.groupby(['Nombre municipio','Estado']).size()).sum()) * 100)[['Nombre municipio','Fallecido']])
+#print("tasa de fallecidos",((covid_19.groupby(['Nombre municipio','Estado']).size() / (covid_19.groupby(['Nombre municipio','Estado']).size()).sum()) * 100)[['Nombre municipio','Fallecido']])
 
-print("tasa de recuperados",((covid_19.groupby(['Nombre municipio','Recuperado']).size() / (covid_19.groupby(['Nombre municipio','Estado']).size()).sum()) * 100)[['Nombre municipio','Recuperado']])
+#print("tasa de recuperados",((covid_19.groupby(['Nombre municipio','Recuperado']).size() / (covid_19.groupby(['Nombre municipio','Estado']).size()).sum()) * 100)[['Nombre municipio','Recuperado']])
 
 #25.  Liste por cada ciudad la cantidad de personas por atención
 
@@ -120,4 +121,9 @@ covid_19[(covid_19['Ubicación del caso'] != 'Fallecido')].groupby(['Nombre muni
 #26.  Liste el promedio de edad por sexo por cada ciudad de contagiados
 
 print( covid_19.groupby(['Nombre municipio', 'Sexo'])['Edad'].mean())
+
+#27.  Grafique las curvas de contagio, muerte y recuperación de toda Colombia acumulados
+covid_19['Recuperado'].value_counts().plot.bar()
+
+#
 
