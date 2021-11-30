@@ -26,3 +26,7 @@ print(covid_19[(covid_19.Recuperado != '')].groupby(['Nombre municipio']).size()
 #4.  Número de personas que se encuentran en atención en casa
 
 covid_19[covid_19['Ubicación del caso']=='Casa'].shape[0]
+
+#5.  Número de personas que se encuentran recuperados
+
+covid_19[covid_19['Recuperado']=='Recuperado'].shape[0]
